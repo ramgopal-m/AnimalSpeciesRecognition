@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="2000" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box { fill: #ffd7d7; stroke: #333; stroke-width: 2; }
+        .decision { fill: #ffffff; stroke: #333; stroke-width: 2; }
+        .start-end { fill: #90EE90; stroke: #333; stroke-width: 2; }
+        .arrow { stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+        .arrow-yes { stroke: #008000; stroke-width: 2; marker-end: url(#arrowhead-green); }
+        .arrow-no { stroke: #FF0000; stroke-width: 2; marker-end: url(#arrowhead-red); }
+        .text { fill: #000000; font-family: Arial; font-size: 14px; text-anchor: middle; }
+        .phase { fill: #333; font-family: Arial; font-size: 18px; font-weight: bold; text-anchor: middle; }
+        .small-text { fill: #000000; font-family: Arial; font-size: 12px; text-anchor: middle; }
+        .yes-no { fill: #000000; font-family: Arial; font-size: 12px; }
+    </style>
+    
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+        <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#008000"/>
+        </marker>
+        <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#FF0000"/>
+        </marker>
+    </defs>
+
+    <!-- Start -->
+    <ellipse cx="600" cy="50" rx="70" ry="30" class="start-end"/>
+    <text x="600" y="55" class="text">Start</text>
+
+    <!-- Phase 1: Data Preprocessing -->
+    <text x="600" y="100" class="phase">Phase 1: Data Preprocessing</text>
+    
+    <rect x="450" y="120" width="300" height="80" rx="10" class="box"/>
+    <text x="600" y="150" class="text">Read Input Dataset</text>
+    <text x="600" y="170" class="small-text">Check image formats and dimensions</text>
+
+    <!-- Image Valid Decision -->
+    <path d="M 450,240 L 600,280 L 750,240 L 600,200 Z" class="decision"/>
+    <text x="600" y="245" class="text">Image Valid?</text>
+    <text x="700" y="245" class="yes-no">Yes</text>
+    <text x="500" y="245" class="yes-no">No</text>
+
+    <!-- Data Preprocessing Steps -->
+    <rect x="450" y="320" width="300" height="120" rx="10" class="box"/>
+    <text x="600" y="350" class="text">Data Preprocessing</text>
+    <text x="600" y="370" class="small-text">• Resize to 224x224</text>
+    <text x="600" y="390" class="small-text">• Data Augmentation (Flip, Rotate, Color)</text>
+    <text x="600" y="410" class="small-text">• Normalize Pixel Values</text>
+
+    <!-- Dataset Split -->
+    <rect x="450" y="480" width="300" height="100" rx="10" class="box"/>
+    <text x="600" y="510" class="text">Split Dataset</text>
+    <text x="600" y="530" class="small-text">Train (70%) / Val (15%) / Test (15%)</text>
+
+    <!-- Phase 2: Model Initialization -->
+    <text x="600" y="620" class="phase">Phase 2: Model Initialization</text>
+
+    <rect x="450" y="640" width="300" height="140" rx="10" class="box"/>
+    <text x="600" y="670" class="text">Initialize ResNet50</text>
+    <text x="600" y="690" class="small-text">• Load Pre-trained Weights</text>
+    <text x="600" y="710" class="small-text">• Freeze Base Layers</text>
+    <text x="600" y="730" class="small-text">• Modify Final Layer (40 classes)</text>
+    <text x="600" y="750" class="small-text">• Set Hyperparameters</text>
+
+    <!-- Phase 3: Training Loop -->
+    <text x="600" y="820" class="phase">Phase 3: Training Loop</text>
+
+    <!-- Epoch Loop -->
+    <path d="M 450,860 L 600,900 L 750,860 L 600,820 Z" class="decision"/>
+    <text x="600" y="865" class="text">Epochs Complete?</text>
+    <text x="700" y="865" class="yes-no">Yes</text>
+    <text x="500" y="865" class="yes-no">No</text>
+
+    <!-- Training Process - Updated -->
+    <rect x="450" y="940" width="300" height="160" rx="10" class="box"/>
+    <text x="600" y="970" class="text">Training Process</text>
+    <text x="600" y="990" class="small-text">• Forward Pass (Prediction)</text>
+    <text x="600" y="1010" class="small-text">• Calculate Loss (CrossEntropy)</text>
+    <text x="600" y="1030" class="small-text">• Backpropagation (Gradient Calculation)</text>
+    <text x="600" y="1050" class="small-text">• Update Weights (Adam Optimizer)</text>
+    <text x="600" y="1070" class="small-text">• Learning Rate: 0.001</text>
+
+    <!-- Validation -->
+    <rect x="450" y="1140" width="300" height="100" rx="10" class="box"/>
+    <text x="600" y="1170" class="text">Validation</text>
+    <text x="600" y="1190" class="small-text">Calculate Validation Metrics</text>
+
+    <!-- Best Model Decision -->
+    <path d="M 450,1280 L 600,1320 L 750,1280 L 600,1240 Z" class="decision"/>
+    <text x="600" y="1285" class="text">Best Model?</text>
+    <text x="700" y="1285" class="yes-no">Yes</text>
+    <text x="500" y="1285" class="yes-no">No</text>
+
+    <!-- Save Model -->
+    <rect x="800" y="1260" width="200" height="50" rx="10" class="box"/>
+    <text x="900" y="1290" class="text">Save Checkpoint</text>
+
+    <!-- Phase 4: Testing -->
+    <text x="600" y="1380" class="phase">Phase 4: Testing</text>
+
+    <rect x="450" y="1400" width="300" height="120" rx="10" class="box"/>
+    <text x="600" y="1430" class="text">Model Evaluation</text>
+    <text x="600" y="1450" class="small-text">• Load Best Model</text>
+    <text x="600" y="1470" class="small-text">• Test Set Inference</text>
+    <text x="600" y="1490" class="small-text">• Calculate Metrics</text>
+
+    <!-- Phase 5: Deployment -->
+    <text x="600" y="1560" class="phase">Phase 5: Deployment</text>
+
+    <rect x="450" y="1580" width="300" height="100" rx="10" class="box"/>
+    <text x="600" y="1610" class="text">Model Deployment</text>
+    <text x="600" y="1630" class="small-text">• Export Model</text>
+    <text x="600" y="1650" class="small-text">• Configure for Inference</text>
+
+    <!-- End -->
+    <ellipse cx="600" cy="1740" rx="70" ry="30" class="start-end" style="fill: #D3D3D3"/>
+    <text x="600" y="1745" class="text">End</text>
+
+    <!-- Arrows -->
+    <line x1="600" y1="80" x2="600" y2="120" class="arrow"/>
+    <line x1="600" y1="200" x2="600" y2="240" class="arrow"/>
+    <line x1="600" y1="280" x2="600" y2="320" class="arrow-yes"/>
+    <line x1="450" y1="240" x2="300" y2="240" x2="300" y2="150" x2="450" y2="150" class="arrow-no"/>
+    <line x1="600" y1="440" x2="600" y2="480" class="arrow"/>
+    <line x1="600" y1="580" x2="600" y2="640" class="arrow"/>
+    <line x1="600" y1="780" x2="600" y2="820" class="arrow"/>
+    <line x1="600" y1="900" x2="600" y2="940" class="arrow-no"/>
+    <line x1="600" y1="1060" x2="600" y2="1100" class="arrow"/>
+    <line x1="600" y1="1200" x2="600" y2="1240" class="arrow"/>
+    <line x1="750" y1="1285" x2="800" y2="1285" class="arrow-yes"/>
+    <line x1="600" y1="1320" x2="600" y2="1400" class="arrow"/>
+    <line x1="600" y1="1520" x2="600" y2="1580" class="arrow"/>
+    <line x1="600" y1="1680" x2="600" y2="1710" class="arrow"/>
+    <!-- Training Loop Back -->
+    <line x1="900" y1="1310" x2="900" y2="880" x2="750" y2="880" class="arrow"/>
+    <line x1="600" y1="860" x2="600" y2="1740" class="arrow-yes"/>
+
+    <!-- Technical Details Box -->
+    <rect x="50" y="1200" width="250" height="200" rx="10" style="fill: #f0f0f0; stroke: #333;"/>
+    <text x="175" y="1230" class="text" style="font-weight: bold;">Training Details</text>
+    <text x="175" y="1260" class="small-text">• Forward Pass: Generate predictions</text>
+    <text x="175" y="1280" class="small-text">• Loss: Measure prediction error</text>
+    <text x="175" y="1300" class="small-text">• Backpropagation: Calculate gradients</text>
+    <text x="175" y="1320" class="small-text">• Weight Update: Improve model</text>
+    <text x="175" y="1340" class="small-text">• Batch Size: 32 images</text>
+    <text x="175" y="1360" class="small-text">• Learning Rate: 0.001</text>
+</svg> 

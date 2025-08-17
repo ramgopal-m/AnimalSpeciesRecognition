@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1100" height="800" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box { fill: #23272f; stroke: #ffd166; stroke-width: 2; }
+        .arrow { stroke: #ffd166; stroke-width: 2; marker-end: url(#arrowhead); }
+        .text { fill: #e5e5e5; font-family: Arial; font-size: 14px; text-anchor: middle; }
+        .phase { fill: #ffd166; font-family: Arial; font-size: 16px; font-weight: bold; text-anchor: middle; }
+    </style>
+    
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ffd166"/>
+        </marker>
+    </defs>
+
+    <!-- Phase 1: Data Preprocessing -->
+    <text x="550" y="40" class="phase">Phase 1: Data Preprocessing</text>
+    
+    <rect x="100" y="60" width="200" height="60" rx="10" class="box"/>
+    <text x="200" y="90" class="text">Input Image</text>
+    <text x="200" y="110" class="text">(224x224 RGB)</text>
+
+    <rect x="400" y="60" width="200" height="60" rx="10" class="box"/>
+    <text x="500" y="90" class="text">Data Augmentation</text>
+    <text x="500" y="110" class="text">Resize, Flip, Color Jitter</text>
+
+    <rect x="700" y="60" width="200" height="60" rx="10" class="box"/>
+    <text x="800" y="90" class="text">Normalization</text>
+    <text x="800" y="110" class="text">Mean/Std Scaling</text>
+
+    <!-- Phase 2: Feature Extraction -->
+    <text x="550" y="180" class="phase">Phase 2: Feature Extraction (ResNet50)</text>
+
+    <rect x="100" y="200" width="200" height="60" rx="10" class="box"/>
+    <text x="200" y="230" class="text">Convolutional Layers</text>
+    <text x="200" y="250" class="text">(Pre-trained)</text>
+
+    <rect x="400" y="200" width="200" height="60" rx="10" class="box"/>
+    <text x="500" y="230" class="text">Residual Blocks</text>
+    <text x="500" y="250" class="text">Skip Connections</text>
+
+    <rect x="700" y="200" width="200" height="60" rx="10" class="box"/>
+    <text x="800" y="230" class="text">Feature Maps</text>
+    <text x="800" y="250" class="text">(2048 Features)</text>
+
+    <!-- Phase 3: Classification -->
+    <text x="550" y="320" class="phase">Phase 3: Classification Head</text>
+
+    <rect x="100" y="340" width="200" height="60" rx="10" class="box"/>
+    <text x="200" y="370" class="text">Dense Layer (512)</text>
+    <text x="200" y="390" class="text">ReLU Activation</text>
+
+    <rect x="400" y="340" width="200" height="60" rx="10" class="box"/>
+    <text x="500" y="370" class="text">Dropout (0.5)</text>
+    <text x="500" y="390" class="text">Regularization</text>
+
+    <rect x="700" y="340" width="200" height="60" rx="10" class="box"/>
+    <text x="800" y="370" class="text">Output Layer (40)</text>
+    <text x="800" y="390" class="text">Softmax Activation</text>
+
+    <!-- Phase 4: Post-processing -->
+    <text x="550" y="460" class="phase">Phase 4: Post-processing</text>
+
+    <rect x="250" y="480" width="200" height="60" rx="10" class="box"/>
+    <text x="350" y="510" class="text">Class Probabilities</text>
+    <text x="350" y="530" class="text">Top Prediction</text>
+
+    <rect x="550" y="480" width="200" height="60" rx="10" class="box"/>
+    <text x="650" y="510" class="text">Confidence Score</text>
+    <text x="650" y="530" class="text">Threshold Check</text>
+
+    <!-- Arrows -->
+    <!-- Phase 1 -->
+    <line x1="300" y1="90" x2="400" y2="90" class="arrow"/>
+    <line x1="600" y1="90" x2="700" y2="90" class="arrow"/>
+    
+    <!-- Phase 1 to 2 -->
+    <line x1="800" y1="120" x2="800" y2="200" class="arrow"/>
+    <line x1="800" y1="120" x2="200" y2="200" class="arrow"/>
+    
+    <!-- Phase 2 -->
+    <line x1="300" y1="230" x2="400" y2="230" class="arrow"/>
+    <line x1="600" y1="230" x2="700" y2="230" class="arrow"/>
+    
+    <!-- Phase 2 to 3 -->
+    <line x1="800" y1="260" x2="800" y2="340" class="arrow"/>
+    <line x1="800" y1="260" x2="200" y2="340" class="arrow"/>
+    
+    <!-- Phase 3 -->
+    <line x1="300" y1="370" x2="400" y2="370" class="arrow"/>
+    <line x1="600" y1="370" x2="700" y2="370" class="arrow"/>
+    
+    <!-- Phase 3 to 4 -->
+    <line x1="800" y1="400" x2="350" y2="480" class="arrow"/>
+    <line x1="450" y1="510" x2="550" y2="510" class="arrow"/>
+
+    <!-- Additional Information -->
+    <text x="550" y="600" class="phase">Key Metrics</text>
+    
+    <rect x="150" y="620" width="250" height="140" rx="10" class="box"/>
+    <text x="275" y="645" class="text">Training Parameters</text>
+    <text x="275" y="670" class="text">• Batch Size: 32</text>
+    <text x="275" y="695" class="text">• Learning Rate: 0.001</text>
+    <text x="275" y="720" class="text">• Optimizer: Adam</text>
+    <text x="275" y="745" class="text">• Loss: CrossEntropy</text>
+
+    <rect x="450" y="620" width="250" height="140" rx="10" class="box"/>
+    <text x="575" y="645" class="text">Model Performance</text>
+    <text x="575" y="670" class="text">• Training Acc: 83.31%</text>
+    <text x="575" y="695" class="text">• Validation Acc: 92.66%</text>
+    <text x="575" y="720" class="text">• Training Loss: 0.5974</text>
+    <text x="575" y="745" class="text">• Validation Loss: 0.2729</text>
+
+    <rect x="750" y="620" width="250" height="140" rx="10" class="box"/>
+    <text x="875" y="645" class="text">Implementation Details</text>
+    <text x="875" y="670" class="text">• Framework: PyTorch</text>
+    <text x="875" y="695" class="text">• Base Model: ResNet50</text>
+    <text x="875" y="720" class="text">• Classes: 40</text>
+    <text x="875" y="745" class="text">• Image Size: 224x224</text>
+</svg> 

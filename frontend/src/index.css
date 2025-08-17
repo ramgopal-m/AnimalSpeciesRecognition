@@ -1,0 +1,120 @@
+/* Modern CSS Reset and Global Styles */
+
+/* Box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #181818;
+  color: #f3f3f3;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+:root {
+  --primary: #ffd166;
+  --primary-dark: #f9a826;
+  --accent: #646cff;
+  --accent-hover: #535bf2;
+  --bg-dark: #181818;
+  --bg-light: #fff;
+  --text-dark: #181818;
+  --text-light: #f3f3f3;
+  --border-radius: 10px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+  font-weight: 500;
+}
+a:hover, a:focus {
+  color: var(--accent-hover);
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+button {
+  background: var(--primary);
+  color: var(--text-dark);
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  border: none;
+}
+button:hover, button:focus {
+  background: var(--primary-dark);
+  color: var(--text-light);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--text-dark);
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+  }
+  a {
+    color: var(--accent-hover);
+  }
+  button {
+    background: var(--accent);
+    color: var(--text-light);
+  }
+  button:hover, button:focus {
+    background: var(--primary);
+    color: var(--text-dark);
+  }
+}

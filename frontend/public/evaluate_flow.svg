@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="950" height="120" viewBox="0 0 950 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .step { fill: #23272f; stroke: #ffd166; stroke-width: 3; rx: 18; }
+    .step-text { font-family: 'Poppins', Arial, sans-serif; font-size: 20px; fill: #fff; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+    .arrow { stroke: #ffd166; stroke-width: 3; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffd166"/>
+    </marker>
+  </defs>
+  <rect class="step" x="30" y="30" width="180" height="50" rx="18"/>
+  <text class="step-text" x="120" y="60">Load Model</text>
+  <rect class="step" x="240" y="30" width="270" height="50" rx="18"/>
+  <text class="step-text" x="375" y="60">Predict on Test</text>
+  <rect class="step" x="540" y="30" width="240" height="50" rx="18"/>
+  <text class="step-text" x="660" y="60">Compute Metrics</text>
+  <rect class="step" x="810" y="30" width="110" height="50" rx="18"/>
+  <text class="step-text" x="865" y="60">Plot Results</text>
+  <line class="arrow" x1="210" y1="55" x2="240" y2="55"/>
+  <line class="arrow" x1="510" y1="55" x2="540" y2="55"/>
+  <line class="arrow" x1="780" y1="55" x2="810" y2="55"/>
+</svg> 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1300" height="120" viewBox="0 0 1300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .step { fill: #23272f; stroke: #ffd166; stroke-width: 3; rx: 18; }
+    .step-text { font-family: 'Poppins', Arial, sans-serif; font-size: 20px; fill: #fff; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+    .arrow { stroke: #ffd166; stroke-width: 3; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffd166"/>
+    </marker>
+  </defs>
+  <rect class="step" x="30" y="30" width="200" height="50" rx="18"/>
+  <text class="step-text" x="130" y="60">Load Data</text>
+  <rect class="step" x="260" y="30" width="250" height="50" rx="18"/>
+  <text class="step-text" x="385" y="60">Train Loop</text>
+  <rect class="step" x="540" y="30" width="180" height="50" rx="18"/>
+  <text class="step-text" x="630" y="60">Validate</text>
+  <rect class="step" x="750" y="30" width="270" height="50" rx="18"/>
+  <text class="step-text" x="885" y="60">Save Best Model</text>
+  <rect class="step" x="1050" y="30" width="200" height="50" rx="18"/>
+  <text class="step-text" x="1150" y="60">Plot History</text>
+  <line class="arrow" x1="230" y1="55" x2="260" y2="55"/>
+  <line class="arrow" x1="510" y1="55" x2="540" y2="55"/>
+  <line class="arrow" x1="720" y1="55" x2="750" y2="55"/>
+  <line class="arrow" x1="1020" y1="55" x2="1050" y2="55"/>
+</svg> 

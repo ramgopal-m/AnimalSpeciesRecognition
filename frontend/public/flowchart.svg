@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="1400" viewBox="0 0 800 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .step { 
+      fill: #23272f; 
+      stroke: #ffd166; 
+      stroke-width: 2.5;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    }
+    .step-text { 
+      font-family: 'Poppins', Arial, sans-serif; 
+      font-size: 18px; 
+      fill: #ffffff; 
+      font-weight: 500; 
+      text-anchor: middle; 
+      dominant-baseline: middle;
+    }
+    .arrow { 
+      stroke: #ffd166; 
+      stroke-width: 2.5; 
+      marker-end: url(#arrowhead);
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    .substep { 
+      fill: #2d313a; 
+      stroke: #ffd166; 
+      stroke-width: 2;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    .substep-text { 
+      font-family: 'Poppins', Arial, sans-serif; 
+      font-size: 14px; 
+      fill: #ffd166; 
+      font-weight: 500; 
+      text-anchor: middle; 
+      dominant-baseline: middle;
+    }
+    .connector {
+      stroke: #ffd166;
+      stroke-width: 1.5;
+      stroke-dasharray: 4;
+      opacity: 0.7;
+    }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffd166"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#1a1d21"/>
+
+  <!-- Main Steps -->
+  <rect class="step" x="300" y="50" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="78">Start</text>
+
+  <rect class="step" x="300" y="150" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="178">Load Dataset</text>
+
+  <rect class="step" x="300" y="250" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="278">Data Preprocessing</text>
+
+  <rect class="step" x="300" y="350" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="378">Split Dataset</text>
+
+  <rect class="step" x="300" y="450" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="478">Initialize Model</text>
+
+  <rect class="step" x="300" y="550" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="578">Training Loop</text>
+
+  <rect class="step" x="300" y="650" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="678">Testing / Eval</text>
+
+  <rect class="step" x="300" y="750" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="778">Prediction</text>
+
+  <rect class="step" x="300" y="850" width="200" height="55" rx="15"/>
+  <text class="step-text" x="400" y="878">End</text>
+
+  <!-- Vertical Arrows -->
+  <path class="arrow" d="M400 105 L400 150"/>
+  <path class="arrow" d="M400 205 L400 250"/>
+  <path class="arrow" d="M400 305 L400 350"/>
+  <path class="arrow" d="M400 405 L400 450"/>
+  <path class="arrow" d="M400 505 L400 550"/>
+  <path class="arrow" d="M400 605 L400 650"/>
+  <path class="arrow" d="M400 705 L400 750"/>
+  <path class="arrow" d="M400 805 L400 850"/>
+
+  <!-- Left Side Substeps -->
+  <!-- Data Preprocessing Substeps -->
+  <rect class="substep" x="100" y="235" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="253">Resize, Normalize</text>
+  <rect class="substep" x="100" y="280" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="298">Augmentation</text>
+  <path class="connector" d="M250 253 L300 278"/>
+  <path class="connector" d="M250 298 L300 278"/>
+
+  <!-- Training Loop Substeps -->
+  <rect class="substep" x="100" y="520" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="538">Forward Pass</text>
+  <rect class="substep" x="100" y="565" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="583">Compute Loss</text>
+  <rect class="substep" x="100" y="610" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="628">Backward Pass</text>
+  <rect class="substep" x="100" y="655" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="673">Update Weights</text>
+  <rect class="substep" x="100" y="700" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="718">Validate</text>
+  <rect class="substep" x="100" y="745" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="175" y="763">Save Best Model</text>
+  <path class="connector" d="M250 578 L300 578"/>
+
+  <!-- Right Side Substeps -->
+  <!-- Initialize Model Substeps -->
+  <rect class="substep" x="550" y="435" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="453">Load ResNet50</text>
+  <rect class="substep" x="550" y="480" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="498">Freeze Layers</text>
+  <rect class="substep" x="550" y="525" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="543">Replace Head</text>
+  <path class="connector" d="M500 478 L550 478"/>
+
+  <!-- Testing/Eval Substeps -->
+  <rect class="substep" x="550" y="620" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="638">Predict</text>
+  <rect class="substep" x="550" y="665" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="683">Accuracy</text>
+  <rect class="substep" x="550" y="710" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="728">Confusion Matrix</text>
+  <path class="connector" d="M500 678 L550 678"/>
+
+  <!-- Prediction Substeps -->
+  <rect class="substep" x="550" y="800" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="818">API/Camera</text>
+  <rect class="substep" x="550" y="845" width="150" height="35" rx="10"/>
+  <text class="substep-text" x="625" y="863">Return Result</text>
+  <path class="connector" d="M500 778 L550 823"/>
+</svg>

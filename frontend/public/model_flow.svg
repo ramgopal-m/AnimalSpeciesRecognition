@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="950" height="120" viewBox="0 0 950 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .step { fill: #23272f; stroke: #ffd166; stroke-width: 3; rx: 18; }
+    .step-text { font-family: 'Poppins', Arial, sans-serif; font-size: 20px; fill: #fff; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+    .arrow { stroke: #ffd166; stroke-width: 3; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffd166"/>
+    </marker>
+  </defs>
+  <rect class="step" x="30" y="30" width="220" height="50" rx="18"/>
+  <text class="step-text" x="140" y="60">Load ResNet50</text>
+  <rect class="step" x="280" y="30" width="200" height="50" rx="18"/>
+  <text class="step-text" x="380" y="60">Freeze Layers</text>
+  <rect class="step" x="510" y="30" width="220" height="50" rx="18"/>
+  <text class="step-text" x="620" y="60">Replace Head</text>
+  <rect class="step" x="770" y="30" width="150" height="50" rx="18"/>
+  <text class="step-text" x="845" y="60">Forward Pass</text>
+  <line class="arrow" x1="250" y1="55" x2="280" y2="55"/>
+  <line class="arrow" x1="480" y1="55" x2="510" y2="55"/>
+  <line class="arrow" x1="730" y1="55" x2="770" y2="55"/>
+</svg> 
